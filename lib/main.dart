@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:quran_app/constants/constants.dart';
+import 'package:quran_app/screens/jus_screen.dart';
 import 'package:quran_app/screens/splash_screen.dart';
+import 'package:quran_app/screens/surah_detail.dart';
+import 'package:get/get.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,6 +26,10 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Poppins',
       ),
       home: SplashScreen(),
+      routes: {
+        JuzScreen.id:(context)=>JuzScreen(),
+        Surahdetail.id:(context)=>Surahdetail(),
+      },
     );
   }
 }

@@ -5,6 +5,7 @@ import 'package:quran_app/screens/audio_screen.dart';
 import 'package:quran_app/screens/home_screen.dart';
 import 'package:quran_app/screens/prayer_screen.dart';
 import 'package:quran_app/screens/quran_screen.dart';
+import 'package:quran_app/screens/qari_screen.dart';
 
 import '../constants/constants.dart';
 
@@ -18,7 +19,7 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
 
   int selectindex = 0;
-  List<Widget> _widgetsList = [HomeScreen(),QuranScreen(),AudioScreen(),PrayerScreen()];
+  List<Widget> _widgetsList = [HomeScreen(),QuranScreen(),QariListScreen(),PrayerScreen()];
 
   @override
   Widget build(BuildContext context) {

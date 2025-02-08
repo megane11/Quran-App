@@ -1,7 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:quran_app/screens/main_screen.dart';
 import 'package:quran_app/screens/onboarding_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatefulWidget{
 
@@ -11,12 +13,24 @@ class SplashScreen extends StatefulWidget{
 }
 class _SplashScreenState extends State<SplashScreen>{
 
+  bool alreadyUsed = false;
+
+  void getData()async{
+    // Obtain shared preferences.
+    final prefs = await SharedPreferences.getInstance();
+    alreadyUsed = prefs.getBool("alreadyUsed") ?? false;
+    //onBoarding screen will show for first time
+  }
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+    getData();
     Timer(Duration(seconds: 3), ()=>Navigator.pushReplacement(context, 
-        MaterialPageRoute(builder: (context)=>OnBoardingScreen())));
+        MaterialPageRoute(builder: (context) {
+          return alreadyUsed ? MainScreen() : OnBoardingScreen();
+        })));
   }
 
   @override
