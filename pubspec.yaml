@@ -37,6 +37,9 @@ dependencies:
   introduction_screen: ^3.1.1
   flutter_svg: ^1.0.2
   convex_bottom_bar: ^3.2.0
+  intl: ^0.20.2
+  hijri: ^3.0.0
+  http: ^1.3.0
 
 dev_dependencies:
   flutter_test:
@@ -70,6 +73,7 @@ flutter:
     - assets/mosque.png
     - assets/home.png
     - assets/audio.png
+    - assets/background_img.jpg
 
   #   - images/a_dot_ham.jpeg
 
